@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<math.h>
+#include<assert.h>
+
+#include "MeasurementError.h"
+#include "SolveSquare.h"
+
+int SolveSquare (double a, double b, double c, double* x1, double* x2)
+  {
+  assert (*x1 != NAN);
+  assert (*x2 != NAN);
+  assert ( x1 != NULL);
+  assert ( x2 != NULL);
+  assert ( x1 != x2);
+  assert (isfinite(a));
+  assert (isfinite(b));
+  assert (isfinite(c));
+
+
+  if (IsZero(a))
+    {
+    return (SolveLinear(a , b, c, x1));
+    }
+  else /* if a != 0 */
+     {
+     double d = b*b - (4*a*c);
+     if ( IsZero(d))
+       {
+       *x1 = *x2 = -b / (2*a);
+       return ONE_ROOT;
+       }
+     if (d > 0)
+       {
+       double sqrt_d = sqrt(d);
+       *x1 = ( - b - sqrt_d) / (2*a);
+       *x2 = ( - b + sqrt_d) / (2*a);
+       return TWO_ROOTS;
+       }
+     else
+       {
+       return ZERO_ROOT;
+       }
+
+     }
+
+  }
+
+int SolveLinear(double a,double b, double c, double* x1)
+  {
+  assert ( x1 != NULL);
+  assert (*x1 != NAN);
+  assert (isfinite(a));
+  assert (isfinite(b));
+  assert (isfinite(c));
+  if (IsZero(b))
+    {
+    return (IsZero(c))? INF_ROOTS : ZERO_ROOT;
+    }
+  else /* if b != 0 */
+    {
+    *x1 = -c/b;
+    return 1;
+    }
+  }
+

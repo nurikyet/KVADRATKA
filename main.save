@@ -1,0 +1,76 @@
+#include<stdio.h>
+#include<math.h>
+#include<assert.h>
+
+#include "TXLib.h"
+#include "SolveSquare.h"
+
+int TestAll();
+int TestOne(double a, double b, double c, double x1ref, double x2ref, int nRootsref);
+int TypesOfPrint(int nRoots, double x1, double x2);
+int main()
+  {
+  printf("Quadratic equation version - 15555\n" "Type equation a*x**2+b*x+c = 0\n");
+  printf("Do you want to test the program?\n");
+  printf("If you want, enter 1, otherwise 0\n");
+  int choice = 0;
+  if ((scanf("%d", &choice)) != 0 or (scanf("%d", &choice)) != 1) // TODO: write a loop that will iterate until user enters correct number
+  { // TODO: indent
+    printf("Incorrect input\n");
+  }
+  //while (choice = getchar() != 'EOF');
+  if (choice ==1)
+  {
+    int nOKK = TestAll();
+    printf("%d\n", nOKK);
+  }
+  else if ((choice > 1) or (choice<0))
+  {
+    printf("Incorrect input\n");
+  }
+
+  printf("Enter odds a, b, c\n");
+  double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
+
+    if (scanf("%lg%lg%lg", &a, &b, &c) == 3) // TODO: you may use early return with inverted expression
+    {
+    int nRoots = SolveSquare(a, b, c, &x1, &x2); // TODO: extract in a function
+    TypesOfPrintf()
+    }
+    else
+    printf("Incorrect input");
+ }
+
+
+
+int TestOne(double a, double b, double c, double x1ref, double x2ref, int nRootsref)
+  {
+    double x1 = 0, x2 = 0;
+    int nRoots = SolveSquare(a, b, c, &x1, &x2);
+    if ( fabs(x1-x1ref) >epsilon or fabs(x2-x2ref)>epsilon or nRoots != nRootsref)
+    {
+      printf("FAILED: x1 = %lg, x2 = %lg, nRoots = %d, expected: x1ref = %lg, x2ref = %lg, nRootsref = %d\n", x1, x2, nRoots, x1ref, x2ref, nRootsref);
+      return 0;
+    }
+    else
+    {
+      printf("Test OK\n");
+      return 1;
+    }
+  }
+int TestAll()
+{
+  int nOk = 0;
+  nOk += TestOne(1, 2, 1, -1, -1, 1);
+  nOk += TestOne(0, 1, 1, -1, 0, 1);
+  nOk += TestOne(1, 2, -8, -4, 2, 2);
+  nOk += TestOne(1, -6, 9, 3, 3, 1);
+  nOk += TestOne(0, 1, 1, -1, 0, 1);
+  nOk += TestOne(1, 2, -8, -4, 2, 2);
+  nOk += TestOne(1, -6, 9, 3, 3, 1);
+  return nOk;
+}
+int TypesOfPrint(int nRoots, double x1, double x2)
+{
+
+}

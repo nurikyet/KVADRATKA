@@ -1,0 +1,15 @@
+#ifndef TYPESOFPRINTF_H_INCLUDED
+#define YYPESOFPRINTF_H_INCLUDED
+
+
+int TypesOfPrint(int nRoots, double x1, double x2);
+//enum roots
+//{
+//    INF_ROOTS = -1,
+//    ZERO_ROOT = 0,
+//    ONE_ROOT = 1,
+//    TWO_ROOTS = 2
+//};
+
+
+#endif // TYPESOFPRINTF_H_INCLUDED
