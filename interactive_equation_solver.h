@@ -12,6 +12,7 @@
 */
 ///
 int SolveSquare (double a, double b, double c, double* x1, double* x2);
+// TODO: You can switch return type to your enum. Like why do you have it otherwise?)
 
 /**
 * @brief         Linear Equation
@@ -23,7 +24,7 @@ int SolveLinear(double a, double b, double c, double* x1);
 
 /// Possible options for the number of roots
 enum roots
-{
+{ // TODO: Inconsistent style
     INF_ROOTS = -1,
     ZERO_ROOT = 0,
     ONE_ROOT = 1,

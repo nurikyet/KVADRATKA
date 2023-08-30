@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#include<assert.h>
+#include<assert.h> // TODO: Add a space after #include, like this: #include <assert.h>
 
 #include "TXLib.h"
 #include "interactive_equation_solver.h"
@@ -24,7 +24,7 @@ int main()
     printf("%d\n", nOKK);
     }
 
-  printf(COLOUR_YELLOW(("Enter odds a, b, c\n"));
+  printf(COLOUR_YELLOW(("Enter odds a, b, c\n")); // TODO: I think there is not enough closing brackets!
 
   double a = 0, b = 0, c = 0, x1 = 0, x2 = 0;
 
@@ -43,3 +43,6 @@ int main()
 
 
 
+
+// TODO: Remove all unnecessary files for your git repo (read about git rm and in general read git-scm Pro Git book),
+//       this include all generated files, binary files, save files, ...

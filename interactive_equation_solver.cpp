@@ -56,7 +56,7 @@ int SolveLinear(double a,double b, double c, double* x1)
   else /* if b != 0 */
     {
     *x1 = -c/b;
-    return 1;
+    return 1; // TODO: You have an enum, don't you?
     }
   }
 
