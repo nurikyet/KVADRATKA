@@ -2,6 +2,8 @@
 #define PRINTSOLUTION_H_INCLUDED
 
 // TODO: maybe it's better to name file something like InteractiveSolver?
+//       oof an old TODO still remains and for a reason, Greetings has no 
+//       place in file PrintSolution.h
 
 
 /// Displays roots depending on their number

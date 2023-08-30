@@ -1,6 +1,12 @@
 #ifndef MEASUREMENTERROR_H_INCLUDED
 #define MEASUREMENTERROR_H_INCLUDED
 
+// TODO: Is MeasurmentError.h a good name for this file?
+//       It has the right idea, but not quiet there, I mean measurment error file
+//       is not a measurment error, is it? It maybe contains functions that measure
+//       accordingly to an error.  
+
+
 /// This function helps to compare how close a number is to zero.
 int IsZero(double d);
 

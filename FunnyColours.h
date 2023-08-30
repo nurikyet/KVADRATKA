@@ -2,7 +2,7 @@
 #define FUNNYCOLOURS_H_INCLUDED
 
 #ifndef COLORS_H
-#define INPUT_ROOTS_H
+#define INPUT_ROOTS_H // TODO: Why would you use so many header guards?)
 
 #define COLOUR_NORMAL "\x1B[0m"
 /// Macro for RED text
